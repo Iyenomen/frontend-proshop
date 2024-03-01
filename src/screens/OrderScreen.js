@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
+import axiosInstance from '../services'
 import { PayPalButton } from "react-paypal-button-v2"
 // import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Link } from 'react-router-dom'
@@ -50,7 +51,7 @@ useEffect(() => {
   }
 
   const addPayPalScript = async () => {
-    const { data: clientId } = await axios.get('api/config/paypal')
+    const { data: clientId } = await axiosInstance.get('api/config/paypal')
     const script = document.createElement('script')
     script.type = 'text/javascript'
     script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`

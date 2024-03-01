@@ -1,4 +1,5 @@
-import axios from 'axios'
+// import axios from 'axios'
+import axiosInstance from '../services'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
@@ -67,7 +68,7 @@ const uploadFileHandler = async (e) => {
       }
     }
 
-    const { data } = await axios.post('/api/upload', formData, config)
+    const { data } = await axiosInstance.post('/api/upload', formData, config)
 
     setImage(data)
     setUploading(false)
