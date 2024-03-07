@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
+import {  Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 // import { PayPalButton } from "react-paypal-button-v2"
 import { useDispatch, useSelector } from 'react-redux'
@@ -55,7 +55,7 @@ const PlaceOrderScreen = ({ history }) => {
       })
     )
   }
-
+console.log(placeOrderHandler);
   return (
     <div>
       <CheckoutSteps step1 step2 step3 step4/>
